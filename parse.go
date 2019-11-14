@@ -1,7 +1,6 @@
 package link
 
 import (
-	"fmt"
 	"io"
 	"strings"
 
@@ -24,9 +23,8 @@ func Parse(r io.Reader) ([]Link, error) {
 	for _, node := range nodes {
 		links = append(links, buildLink(node))
 	}
-	fmt.Printf("%+v", links)
 
-	return nil, nil
+	return links, nil
 }
 
 func linkNodes(n *html.Node) []*html.Node {
